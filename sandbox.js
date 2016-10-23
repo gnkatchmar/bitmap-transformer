@@ -31,21 +31,28 @@ var fs = require('fs');
 //   });
 // });
 
-function transformNP (buffer, callback) {
+function transformNPBMP (buffer, callback) {
 
   fs.readFile(buffer, function (err, buffer ) {
     console.log(buffer);
     const bitsPerPixel = buffer.readInt16LE(28);
-    console.log(bitsPerPixel); // 24 for non-palette; 8 for palette
+    console.log(bitsPerPixel); // 24 means non-palette bmp; other values means palette bmp
     const startPalette = buffer.readInt32LE(10);
-    console.log(startPalette);  // 54 for non-palette; 1078 for palette
+    console.log(startPalette);  // 54 for non-palette bmp
+    for (var i = startPalette; i < buffer.length; i++) {
+      buffer[i] = 255 - buffer[i];
+    }
     var newBuffer = Buffer.from(buffer);
     console.log(newBuffer);
+    fs.writeFile('data/transformed.bmp', newBuffer, function(err) {
+      if(err) { 
+         return console.log(err);
+       }
+      console.log('file saved');
+    });
     callback(err, newBuffer);
   });
 
-  
-
 }
 
-allInOne('data/non-palette-bitmap.bmp', function(err, newBuffer)
+transformNPBMP('data/non-palette-bitmap.bmp', function (){console.log('transformNP ended');});

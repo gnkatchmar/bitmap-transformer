@@ -1,4 +1,7 @@
+// this file used for constructing final app
+
 // //palette-bitmap.bmp
+
 
 // var fs = require('fs');
 

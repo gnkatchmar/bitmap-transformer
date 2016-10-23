@@ -1,11 +1,11 @@
-	TransformNPBMP simply inverts the colors of any 24-bit .bmp file.
+TransformNPBMP simply inverts the colors of any 24-bit .bmp file.
+	
+Its only requirement is node's fs command set.
 
-	Its only requirement is node's fs command set.
-
-	Simply feed it the full file name for the .bmp (e.g. 'data/blah-blah.bmp') ('buffer')' and it will color-invert
+Simply feed it the full file name for the .bmp (e.g. 'data/blah-blah.bmp') ('buffer')' and it will color-invert
 and write a new 'trans'-prefixed version of the file.
 
-  There is a Mocha/Chai/eslint test for this process in the 'test' folder.
+There is a Mocha/Chai/eslint test for this process in the 'test' folder.
 
 ISC License (ISC)
 Copyright (c) 2016, Gregory N. Katchmar <gunk55@msn.com>

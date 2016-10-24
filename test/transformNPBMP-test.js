@@ -1,9 +1,9 @@
 // running transformNPBMP already transformed .bmp should then equal original .bmp
 
 var assert = require("chai").assert;
-const transformNPBMP = require("../lib/transformNPBMP");
-const fs = require("fs");
-const buffer = "data/transnon-palette-bitmap.bmp";
+var transformNPBMP = require("../lib/transformNPBMP");
+var fs = require("fs");
+var buffer = "data/transnon-palette-bitmap.bmp";
 
 //path of original .bmp (changing it to a different .bmp produces desired mocha fail)
 var expectedResult;

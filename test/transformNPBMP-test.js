@@ -1,6 +1,6 @@
 // running transformNPBMP already transformed .bmp should then equal original .bmp
 
-const assert = require("chai").assert;
+var assert = require("chai").assert;
 const transformNPBMP = require("../lib/transformNPBMP");
 const fs = require("fs");
 const buffer = "data/transnon-palette-bitmap.bmp";
